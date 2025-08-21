@@ -1,0 +1,11 @@
+# Núcleo
+torch>=2.2
+torchvision>=0.17
+opencv-python>=4.9
+numpy>=1.26
+matplotlib>=3.8
+scikit-learn>=1.4
+# registro
+tensorboard>=2.16
+# opcional (barras de progreso)
+tqdm>=4.66
