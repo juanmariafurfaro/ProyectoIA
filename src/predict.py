@@ -2,9 +2,9 @@ import argparse
 import torch
 import torch.nn.functional as F
 
-from utils.video_io import sample_clip
-from data.video_transforms import ClipTransform
-from models.cnn_lstm import CNNLSTM
+from .utils.video_io import sample_clip
+from .data.video_transforms import ClipTransform
+from .models.cnn_lstm import CNNLSTM
 
 
 def get_args():

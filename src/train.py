@@ -10,10 +10,11 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
 
-from data.video_dataset import VideoFolderDataset
-from models.cnn_lstm import CNNLSTM
-from utils.seed import set_seed
-from utils.metrics import compute_metrics
+from .data.video_dataset import VideoFolderDataset
+from .models.cnn_lstm import CNNLSTM
+from .utils.seed import set_seed
+from .utils.metrics import compute_metrics
+
 
 
 def get_args():
