@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from typing import List
+import random
 
 SUPPORTED_EXTS = {".mp4", ".mov", ".avi", ".mkv"}
 
@@ -33,3 +34,14 @@ def sample_clip(path: str, num_frames: int) -> List[np.ndarray]:
     frames = _read_all_frames(path)
     idxs = uniform_sample_indices(len(frames), num_frames)
     return [frames[i] for i in idxs]
+
+
+def sample_clip_random(path: str, num_frames: int, n_total: int | None = None):
+    frames = _read_all_frames(path)
+    N = len(frames) if n_total is None else min(len(frames), n_total)
+    if N <= num_frames:
+        idxs = uniform_sample_indices(N, num_frames)
+        return [frames[i] for i in idxs]
+    # ventana aleatoria
+    start = random.randint(0, N - num_frames)
+    return frames[start:start+num_frames]
